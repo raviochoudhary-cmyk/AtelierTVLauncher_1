@@ -53,7 +53,13 @@ jobs:
             echo "::error::sdkmanager not found at $SDKMANAGER"; exit 1
           fi
           echo "sdk.dir=$SDK" > local.properties
-          yes | "$SDKMANAGER" --sdk_root="$SDK" --licenses > /dev/null
+          # 'yes' is killed by SIGPIPE once sdkmanager stops reading; with
+          # pipefail that would fail the step, so neutralise yes's exit status.
+          # sdkmanager's own exit status is still enforced.
+          (yes 2>/dev/null || true) | "$SDKMANAGER" --sdk_root="$SDK" --licenses > /dev/null
+          if [ ! -s "$SDK/licenses/android-sdk-license" ]; then
+            echo "::error::Android SDK licence was not accepted"; exit 1
+          fi
           # build-tools;30.0.3 is the minimum build-tools version Android Gradle
           # Plugin 7.4.2 accepts. Without it AGP ignores 29.0.3 and downloads
           # 30.0.3 mid-build anyway; installing it here keeps the build reproducible.
