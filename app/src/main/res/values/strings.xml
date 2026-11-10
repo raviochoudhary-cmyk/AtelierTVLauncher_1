@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Atelier TV</string>
+    <string name="app_name_brand">ATELIER TV</string>
+    <string name="row_streaming">Streaming</string>
+    <string name="row_inputs">Inputs</string>
+    <string name="clock_format" translatable="false">%1$s   %2$s</string>
+    <string name="settings">Settings</string>
+    <string name="network">Network</string>
+    <string name="all_apps">All applications</string>
+    <string name="refresh">Refresh</string>
+    <string name="refreshing">Refreshing application list…</string>
+    <string name="app_not_available">%1$s is no longer installed.</string>
+    <string name="launch_failed">Could not launch %1$s.</string>
+    <string name="launch_failed_generic">Could not launch this application.</string>
+    <string name="action_unavailable">This action is not available on this device.</string>
+    <string name="option_move_left">Move left</string>
+    <string name="option_move_right">Move right</string>
+    <string name="order_saved">App order saved.</string>
+    <string name="inputs_unavailable_title">Input selection</string>
+    <string name="inputs_unavailable_msg">This device does not expose its HDMI / TV inputs through the standard Android TV input API (TvInputManager returned no inputs). Use the system input/source key on your remote to switch inputs, or open Settings to configure sources. No system components were modified.</string>
+</resources>

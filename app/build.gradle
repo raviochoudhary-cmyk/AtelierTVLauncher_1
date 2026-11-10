@@ -1,0 +1,36 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.atelier.tvlauncher'
+    compileSdk 29
+
+    defaultConfig {
+        applicationId "com.atelier.tvlauncher"
+        minSdk 21
+        targetSdk 29
+        versionCode 1
+        versionName "1.0.0"
+    }
+
+    buildTypes {
+        debug {
+            // debuggable by default; nothing extra needed
+        }
+        release {
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    // Intentionally empty: framework-only implementation keeps the APK small
+    // and fast on the MediaTek m7632 / 32-bit ARM target.
+}
