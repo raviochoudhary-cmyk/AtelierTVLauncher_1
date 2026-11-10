@@ -77,12 +77,12 @@ public final class HdmiInputHelper {
 
                 CharSequence label = null;
                 try {
-                    label = info.loadCustomLabel(ctx.getPackageManager());
+                    label = info.loadCustomLabel(ctx);
                 } catch (Throwable ignored) {
                 }
                 if (label == null || label.length() == 0) {
                     try {
-                        label = info.loadLabel(ctx.getPackageManager());
+                        label = info.loadLabel(ctx);
                     } catch (Throwable ignored) {
                     }
                 }
